@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center; background-color: teal;">
+
+    <h1 id="tamanhoNome"></h1>
+
+    <h1 id="teste"></h1>
+
+    <script>
+
+        nome = prompt("Insira um nome");
+
+        //NOME.LENGTH
+        tamanhoNomeLength = nome.length;
+            tamanhoNomeHTML = document.getElementById("tamanhoNome");
+                tamanhoNomeHTML.textContent = `Incluindo espaços e caracteres, o seu nome tem ${tamanhoNomeLength} índices.`;
+        ///NOME.LENGTH
+
+        //NOME.TRIM
+        nomeTrim = nome.trim(); //The trim() method removes whitespace from both sides of a string.
+            tamanhoNomeTrim = nomeTrim.length;
+                document.write(`<br> <h1>Sem os espaços iniciais e finais da string, seu nome tem ${tamanhoNomeTrim} caracteres.`);
+        // /NOME.TRIM - útil para apagar espaços inseridos acidentalmente em formulários
+
+        //NOME.CHARAT
+        nomeCharAt = nome.charAt(0)
+            document.write(`<br><br>charAt(indice) retorna o caractere localizado no índice passado como argumento, que no caso é zero = ${nomeCharAt}`)
+        // /NOME.CHATAT
+        
+        //REPLACE("","")
+        a = "a";
+        searchCaracter = nome.search(a);
+
+        if (searchCaracter > -1 ){
+            nameReplaced = nome.replace("a", " A FOI ALTERADO POR B VIA MÉTODO REPLACE ");
+            document.write(`<br> <br> ${nameReplaced}`);
+        }
+
+        //indexOf() lastIndexOf()
+        //https://www.w3schools.com/jsref/jsref_obj_string.asp
+    </script>
+</body>
+</html>

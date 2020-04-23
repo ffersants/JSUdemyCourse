@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        nota = prompt("Qual a nota do aluno?")
+        faltas = prompt("Quantas faltas o aluno tem?")
+
+        if(nota >= 7 && faltas <= 20) {
+            document.write('<h1 style="text-align: center;">Aluno aprovado!')
+        }
+
+        else if (nota >= 7 || faltas <= 20) {
+            document.write('<h1 style="text-align: center;">Aluno pendente de aprovação!')
+        }
+
+        else{
+            document.write('<h1 style="text-align: center;">Aluno reprovado!</h1>')
+        }
+    </script>
+</body>
+</html>

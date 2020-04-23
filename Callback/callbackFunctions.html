@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="abc"></h1>
+    <script>
+
+        function exibirArtigo(id, callbackSuccess, callbackError){
+            
+            if (true){
+                callbackSuccess("Succes", "Now you gotta learn by yourself!!")
+            }
+            else{
+                callbackError("Error")
+            }
+        }
+
+        callbackError = function(tittle){
+            document.write(`<h3> ${tittle} <br>`)
+        }
+
+        callbackSuccess = function(tittle, description){
+            document.write(`<h3> ${tittle} <br> ${description}`);
+        }
+
+        
+        exibirArtigo(5, callbackSuccess, callbackError);
+
+
+
+    </script>
+    
+</body>
+</html> b 

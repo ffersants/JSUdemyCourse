@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free IMC Calculator</title>
+</head>
+<body style="text-align: center;">
+    
+
+    <script>
+        
+        altura = prompt("Digite sua altura: ");
+        peso = prompt("Digite seu peso: ");
+
+        altura = altura.replace("," , ".");
+            //altura = parseFloat(altura);
+        peso = peso.replace("," , ".");
+            //peso = parseFloat(peso);
+
+        imc = altura / (peso * peso);    
+
+        imc = parseInt(imc)
+            
+        document.write(`<h1>Seu peso é ${peso} <br> e sua altura ${altura} <br> e seu IMC ${imc}</h1>`)
+
+    </script>
+</body>
+</html>

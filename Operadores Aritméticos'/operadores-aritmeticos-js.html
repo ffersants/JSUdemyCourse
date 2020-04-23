@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <script>
+        // SOMA
+        valor1 = prompt("Digite o valor de 1:");
+            valor1 = parseInt(valor1);//!!!não esquecer de utilizar a função parseInt, pois as entradas do prompot são tidas como string
+        valor2 = prompt("Digite o valor de 2:");
+            valor2 = parseInt(valor2);//!!!não esquecer de utilizar a função parseInt, pois as entradas do prompot são tidas como string
+        document.write("<h4> SOMA <br> A soma de " + valor1 + " + " + valor2 + " é igual a: " + (valor1 + valor2) + "</h1>" );
+        ///SOMA
+
+        //SUBTRAÇÃO
+        document.write("<h4> SUBTRAÇÃO <br> A subtração de " + valor1 + " - " + valor2 + " é igual a: " + (valor1 - valor2) + "</h1>" );
+        ///SUBTRAÇÃO
+
+        //MULTIPLICAÇÃO
+        document.write("<h4> MULTIPLICAÇÃO <br> A multiplicação de " + valor1 + " * " + valor2 + " é igual a: " + (valor1 * valor2) + "</h1>" );
+        ///MULTIPLICAÇÃO
+
+        //DIVISÃO
+        document.write("<h4> DIVISÃO <br> A divisão de " + valor1 + " / " + valor2 + " é igual a: " + (valor1 / valor2) + "</h1>" );
+        ///DIVISÃO
+
+        //MÓDULO
+        document.write("<h4> MÓDULO <br> O módulo de " + valor1 + " % " + valor2 + " é igual a: " + (valor1 % valor2) + "</h1>" );
+        //módulo retorna o resto inteiro de uma divisão
+        ///MÓDULO
+
+        //INCREMENTO
+            posIncrementValor1 = valor1;
+            preIncrementValor1 = valor1;
+           //PÓS INCREMENTO 
+                document.write("<h4> INCREMENTO <br> O pós incremento de " + posIncrementValor1 + "++, nessa instrução continua sendo igual a: " + (posIncrementValor1++) + ". Mas na próxima será igual a " + posIncrementValor1 + "</h1>" );
+            //PRÉ INCREMENTO   
+                document.write("<h4> INCREMENTO <br> O pré incremento de ++" + preIncrementValor1 + " nessa instrução já é igual a: " + ++preIncrementValor1 + "</h1>" );
+        ///INCREMENTO
+
+        //DECREMENTE
+            posDecrementValor1 = valor1;
+            preDecrementValor1 = valor1;         
+            //PÓS DECREMENTO
+                document.write("<h4> DECREMENTO <br> O pós decremento de" + posDecrementValor1 + "--, nessa instrução continua sendo igual a: " + (posDecrementValor1--) + ". Mas na próxima será igual a " + posDecrementValor1 + "</h1>" );
+            //PRE DECREMENTO 
+                document.write("<h4> DECREMENTO <br> O pré decremento de --" + preDecrementValor1 + " nessa instrução já é igual a: " + (--preDecrementValor1) + "</h1>");
+
+    
+    </script>
+</body>
+</html>

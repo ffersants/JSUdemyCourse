@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h4>Escopo de Variável</h4>
+    <script>
+        // wrapper
+        
+        var name = prompt("Você é o?...");
+        var oiFulano = function (name){
+            document.write(`Hi ${name}<br>`);
+        }
+
+        
+        if (name == "Fernando"){
+            oiFulano(name);
+        }
+        /*pra não envolver todo o bloco de código na respectiva condicional a retornar true, é uma melhor prática
+        atribuir a função à uma variável que receberá os parâmetros a serem utilizados na função que é envolvida por essa
+        mesma variável, deste modo os comandos ficam armazenados em variáveis que estão salvas na memória e organizados em
+        seções legíveis, o que torna a leitura melhor e também a manutenção do código*/
+
+        // /wrapper
+        var nome = "Fernando";
+
+        function writeName(nome){
+            document.write(nome);
+            var idade = 25;
+            document.writeln("<br>Essa é uma função writeName() que usa como parâmetro a varíavel externa à função que tem a string Fernando como valor. Aqui declarei var idade que é igual a " + idade);
+        }
+
+        writeName(nome);
+        document.write("<br> Como usei a palavra chave 'var' ao declarar idade, esta ficou restrita ao nível de função, tornou-se uma variável local.")
+        document.write("<br>"+idade)
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+      *{
+        background-color: aqua;
+      }
+
+      h1{
+        color: #424242;
+      }
+
+      #alert{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        width: 540;
+        height: 320px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-image: url(./gradientRectangle.png);
+        border-style: solid;
+        border-image-width: 15px;
+        border-image-slice: 25;
+        border-image-repeat: round;
+      }
+
+    </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    
+    <div id="alert" class="alert alert-dismissible">
+
+      <button class="btn close" data-dismiss="alert" type="button">
+          &times;
+        </button>
+  
+      <div>
+        <h1 id="hours">Agora são exatamente: </h1>
+      </div>
+    </div>
+
+    <script>
+      
+      function getHourNow(){
+        today = new Date();
+        hourNow = today.getHours();
+        return hourNow;
+      }      
+    
+      function chooseGreeting(hourNow){
+          greeting = undefined;
+
+              if (hourNow >= 19 && hourNow <= 22){
+                greeting = "Boa noite!";
+              }
+              else if (hourNow >= 5 && hourNow <= 12){
+                greeting = "Bom dia!";
+              }
+
+              else if (hourNow >= 13 && hourNow <= 18){
+                greeting = "Boa tarde!";
+              }
+              else{
+                greeting = "Boa madrugada";
+              }
+
+          return greeting;
+      }
+
+      getHourNow();
+
+      chooseGreeting(hourNow); 
+      
+      hours = document.getElementById('hours');
+
+      hours.textContent = `Agora são exatamente ${hourNow} \n horas ${greeting}`;     
+    </script>                                                                                      
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    
+    <h1 id="agaUm"></h1>
+
+    <h1 id="agaDois"></h1>
+
+    <script>
+
+        function calcularArea(width, height){
+            return width * height; //width e height são parâmetros que dentro da função 
+            //recebem os argumentos com os quais trabalharão e que virão das chamadas
+        }
+
+        // argumento por valor
+        argumentAsValue = calcularArea(5,18);//5 e 18 são os argumentos da função//is this wrapper??
+
+        element = document.getElementById("agaUm");
+        element.textContent = `aqui os argumentos são passados como valores. ${argumentAsValue}`;
+        // /argumento por valor
+    
+        // argumento por variável
+        tamanho = prompt("Digite a altura:");
+        altura = prompt("Digite a largura:");
+
+        argumentAsVariable = calcularArea(tamanho, altura);//is this wrapper?? YEEESS!! IT'S WRAPPER
+
+        element2 = document.getElementById("agaDois");
+        element2.textContent = `aqui os argumentos são passados como variáveis que têm o input do prompt ${argumentAsVariable}`;//nisso que consiste o wrapper
+
+        /* na linha acima eu poderia ter chamado a função e passando os argumentos na mesma linha em que insiro o texto na variavel element2.
+        ficando assim:
+            element2.textContent = `aqui os argumentos são passados como variáveis que têm o input do prompt ${calcularArea(tamanho, altura)}`;//nisso que consiste o wrapper
+        mas suponhamos que em uma outra situação eu tenha que passar mais de cinco argumentos como parâmetro, ficaria nada elegante e 
+        legível tal código, por isso a chamada pode ser envolvida anteriormente por uma variável, de modo que ao alterar o conteúdo html, eu
+        apenas concatene à string, aquela variável que faz a chamada da função com os argumentos e etc.
+        */
+
+        // /argumento por variável
+        
+    </script>
+
+</body>
+</html>
