@@ -1,3 +1,4 @@
+
 function getCurrentDay(){
     currentDate = new Date();
     day = currentDate.getDate();
@@ -18,8 +19,10 @@ function showCurrentDay(day, month, year){
 
 function getDaysForBirthday(day, month, year){
     todayIs = new Date(`${month}/${day}/${year}`)
+    console.log('today is ' + todayIs);
     const date2 = new Date('8/28/2020');
     const diffTime = Math.abs(date2 - todayIs);
+    console.warn(diffTime);
     diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
     return (diffDays);
 }
@@ -31,6 +34,6 @@ function showDaysForBirthday(diffDays){
 
 getCurrentDay();
 showCurrentDay(day, month, year);
-getDaysForBirthday(day, month, year);
+getDaysForBirthday(day, month, year, birthday);
 showDaysForBirthday(diffDays)
 
