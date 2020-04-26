@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(237, 191, 183);
+}
+
+#container > div{
+    padding: 0.8em 2em;
+}
+
+.text{
+    color: rgb(0, 0, 0, 0.8);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2.1px;
+    text-align: center;
+}
+
+#container{
+    height: 100vh;
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* showBirthday */
+#showBirthday{
+    /* display: block; */
+    background-color: #6e9887;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+#showBirthday .text{
+    font-size: 1.2em;
+}
+
+
+
+/* showCurrentDay */
+#showCurrentDay{
+    /* padding: 0.8em 2em; */
+    background-color: #b5bfa1;
+    border-radius: 1em;
+    width: 100%;
+    /* display: block; */
+}
+
+#showCurrentDay .text{
+    font-size: 2.5em;
+}
+
+/* showDaysForBirthday */
+#showDaysForBirthday{
+    background-color: #f283b6;
+    /* padding: 0.8em 2em; */
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
