@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function onDown(){
+            inputOnDown = document.getElementById("inputOnDown").value;
+            smallOnDown = document.getElementById("smallOnDown");
+            smallOnDown.textContent = inputOnDown;
+        }
+
+        function onUp(){
+            inputOnUp = document.getElementById("inputOnUp").value;
+            smallOnUp = document.getElementById("smallOnUp");
+            smallOnUp.textContent = inputOnUp;
+        }
+    </script>
+</head>
+<body style="text-align: center;">
+
+    <h2>
+        Os inputs abaixo usam respectivamente o keyboard event "onkeydown" e "onkeyup" para replicar no elemento small
+        aquilo que é inserido.
+    </h2>
+
+    <form action="">
+        <input autocomplete="off" id="inputOnDown" type="text" onkeydown="onDown()">
+         <!--autocomplete remove a lista c/ histórico de inputs-->
+        <br><br> 
+        <small id="smallOnDown"></small>
+        
+        <br><br>
+        
+        <input autocomplete="off"  type="text" id="inputOnUp" onkeyup="onUp()">
+         <!--autocomplete remove a lista c/ histórico de inputs-->
+        <br><br>
+        <small id="smallOnUp"></small>
+        
+         <!--
+             ainda há um terceiro keyboard event chamado onkeypress(), no entanto esse talvez só tenha muita utilidade em jogos
+             que rodam no browser, além disso, ele só dispara o evento caso a tecla pressionada seja a de um caractere
+        -->
+    </form>
+    
+</body>
+</html>

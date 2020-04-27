@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            font-size: 1.8em;
+        }
+        *{
+            border: 2px red solid;
+        }
+        body div{
+            background-color: blue;
+            border: 4px yellow solid inset;
+            width: 80px;
+            height: 80px;
+            align-self: center;
+            border-radius: 8em;
+        }
+
+        .color2{
+            background-color: black;
+            border-color: red;
+        }
+
+        .color3{
+            background-color: burlywood;
+            border-color: cornflowerblue;
+        }
+        
+        body div:hover{
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function onClique(){
+            alert("Evento onclick disparado!")
+        }
+
+        function onDubleClique(){
+            alert("Evento ondblClick disparado!")
+        }
+
+        function onMouseDown(){
+            classe = document.getElementById("onmouseDown");
+            classe.className == "color1" ? classe.className = "color2" : classe.className = "color3";
+        }
+    </script>
+</head>
+<body>
+    <h3>onclick="function onClique"</h3>
+        <div onclick="onClique()"></div>
+    
+    <h3>ondblclick = "function onDubleClique</h3>
+        <div ondblclick="onDubleClique()"></div>
+    
+    <h3>onmousedown = "function onMouseDown"</h3>
+        <div onmousedown="onMouseDown()" class="red" id="onmouseDown"></div>
+    
+ 
+</body>
+</html>
