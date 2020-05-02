@@ -38,7 +38,7 @@
         <input required type="password" name="" id="einPut" >
         <button onclick="checarSubmit()" id="submitInput" type="submit">OK</button>
         <br>
-        <small>
+        <small id="required">
             Sua senha deve conter: <br>
             • No mínimo 8 caracteres <br>
             • Uma letra maiúscula <br>
@@ -50,8 +50,18 @@
 
     <script>
         function checarSubmit(){
-            inputValue = document.getElementById("einPut").value.length;
-            inputValue > '3' ? document.getElementById("einPut").style.background = 'rgb(203, 248, 135)' :  document.getElementById("einPut").style.background = 'rgb(231, 108, 108)';
+            inputValue = document.getElementById("einPut").value.trim().length;
+            inputValue > '3' ? testPassed() : testReproved();
+            
+            function testPassed(){
+                document.getElementById("einPut").style.background = 'rgb(203, 248, 135)';
+                document.getElementById("required").style.color ='black';
+            }
+
+            function testReproved(){
+                document.getElementById("einPut").style.background = 'rgb(231, 108, 108)', 
+                document.getElementById("required").style.color ='red';
+            }
         }
     </script> 
 </body>
