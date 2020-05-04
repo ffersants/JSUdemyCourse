@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Será que vai? Calculadora do Fernando</title>
+    <!-- MY CSS -->
+<link rel="stylesheet" href="../css/calculadora-style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="linha-vertical"></div>
+        <div id="linha-horizontal"></div>
+        <div id="titulo">
+            <p>Calculadora do<br>Fernando</p>
+            <div id="calculadora">
+                <input type="text" id="calculadora-inside" disabled value="0">
+                <button type="button">del</button>
+                
+                <div id="teclas-space">
+                    <div id="line-of-buttons-1">
+                        <input type="button" value="1">
+                        <input type="button" value="2">
+                        <input type="button" value="3">
+                        <input type="button" style="padding: 0px 12px;" value="-">
+                    </div>
+                    
+                    <div id="line-of-buttons-2">
+                        <input type="button" value="4">
+                        <input type="button" value="5">
+                        <input type="button" value="6">
+                        <input type="button" value="+">
+                    </div>
+                    
+                    <div id="line-of-buttons-3">
+                        <input type="button" value="7">
+                        <input type="button" value="8">
+                        <input type="button" value="9">
+                        <div id="igual">
+                            <input type="button" value="=" >
+                        </div>
+                    </div>
+
+                    <div id="line-of-buttons-4">
+                        <input type="button" value="0">
+                        <input type="button" style="padding: 0px 12px;" value="*">
+                        <input type="button" style="padding: 0px 14px;" value="/">
+                    </div>
+
+                    <div id="line-of-buttons-5">
+                        <input type="button" value=",">
+                    </div>
+                </div> <!--teclas space-->
+            </div>
+        </div>
+    </div>
+    <!-- MY SCRIPT -->
+    <script src="../js/calculadora-js.js"></script>
+</body>
+</html>
