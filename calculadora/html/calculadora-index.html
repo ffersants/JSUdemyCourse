@@ -14,41 +14,41 @@
         <div id="titulo">
             <p>Calculadora do<br>Fernando</p>
             <div id="calculadora">
-                <input type="text" id="calculadora-inside" disabled value="0">
-                <button type="button">del</button>
+                <input type="text" id="console" disabled placeholder="0">
+                <button onclick="del()" type="button">del</button>
                 
                 <div id="teclas-space">
                     <div id="line-of-buttons-1">
-                        <input type="button" value="1">
-                        <input type="button" value="2">
-                        <input type="button" value="3">
-                        <input type="button" style="padding: 0px 12px;" value="-">
+                        <input onclick="somethingClicked('numero', 1)" type="button" value="1">
+                        <input onclick="somethingClicked('numero', 2)" type="button" value="2">
+                        <input onclick="somethingClicked('numero', 3)" type="button" value="3">
+                        <input type="button" onclick="somethingClicked('operador', '-')" style="padding: 0px 12px;" value="-">
                     </div>
                     
                     <div id="line-of-buttons-2">
-                        <input type="button" value="4">
-                        <input type="button" value="5">
-                        <input type="button" value="6">
-                        <input type="button" value="+">
+                        <input onclick="somethingClicked('numero', 4)" type="button" value="4">
+                        <input onclick="somethingClicked('numero', 5)" type="button" value="5">
+                        <input onclick="somethingClicked('numero', 6)" type="button" value="6">
+                        <input type="button" onclick="somethingClicked('operador', '+')" value="+">
                     </div>
                     
                     <div id="line-of-buttons-3">
-                        <input type="button" value="7">
-                        <input type="button" value="8">
-                        <input type="button" value="9">
+                        <input onclick="somethingClicked('numero', 7)" type="button" value="7">
+                        <input onclick="somethingClicked('numero', 8)" type="button" value="8">
+                        <input onclick="somethingClicked('numero', 9)" type="button" value="9">
                         <div id="igual">
-                            <input type="button" value="=" >
+                            <input type="button" onclick="somethingClicked('igual', '=')" value="=" >
                         </div>
                     </div>
 
                     <div id="line-of-buttons-4">
-                        <input type="button" value="0">
-                        <input type="button" style="padding: 0px 12px;" value="*">
-                        <input type="button" style="padding: 0px 14px;" value="/">
+                        <input onclick="somethingClicked('numero', 0)" type="button" value="0">
+                        <input type="button" onclick="somethingClicked('operador', '*')" style="padding: 0px 12px;" value="*">
+                        <input type="button" onclick="somethingClicked('operador', '/')" style="padding: 0px 14px;" value="/">
                     </div>
 
                     <div id="line-of-buttons-5">
-                        <input type="button" value=",">
+                        <input type="button" onclick="somethingClicked('numero', ',')" value=",">
                     </div>
                 </div> <!--teclas space-->
             </div>
