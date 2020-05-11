@@ -1,5 +1,32 @@
 visor = document.getElementById("console");
 i = 0;
+caracter = 0;
+
+document.addEventListener('keydown', getNumTyped);
+
+function getNumTyped(event){
+    num = (event.key);
+    num <= 9 ? somethingClicked('numero', num) : false;
+    
+    if (num === '/'){
+        somethingClicked('operador', num);
+    } else if (num === '*'){
+        somethingClicked('operador', num);
+    } else if (num === '-'){
+        somethingClicked('operador', num);
+    } else if (num === '+'){
+        somethingClicked('operador', num);
+    } else if (num === '.'){
+        somethingClicked('operador', num)
+    } else if (num === ','){
+        somethingClicked('operador', num)
+    } else if (num === 'Enter'){
+        somethingClicked('igual')
+    } else if (num === 'Backspace'){
+        del()
+    }
+}
+
 function somethingClicked(tipo, valor){
     if (tipo === 'numero'){
         visor.value += valor;
@@ -17,11 +44,10 @@ function somethingClicked(tipo, valor){
     }
     else if(tipo === 'igual'){
         total = eval(visor.value);
-        visor.value = total;
+        total === undefined ? visor.value = '' : visor.value = total;
         i=1;
     }
 }
-
 
 function del(){
     visorValue = visor.value;
