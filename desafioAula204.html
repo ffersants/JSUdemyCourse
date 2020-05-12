@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center; height: 100vh;">
+
+        <div style="width: 100%;">
+            <input type="text" name="" id="inputTxt">
+            
+            <button type="submit" id="adicionar">
+                Adicionar
+            </button>
+            
+            <button type="submit" id="ordenar">
+                Ordenar
+            </button>
+        </div>
+
+        <div id="showInputs" style="border: 1px solid red; width: 100%; text-align: center;">
+
+        </div>
+
+    <script>
+        objetos = ['Cadeira', 'Impressora', 'Garfo'];
+        
+        adicionar = document.getElementById("adicionar");
+            ordenar = document.getElementById('ordenar');
+        adicionar.addEventListener('click', getValueInputed);
+            ordenar.addEventListener('click', ordenarInputs);
+        
+        function getValueInputed(adicionar){
+            
+            inputTxt = document.getElementById("inputTxt").value;
+            inputTxt == "" ? alert('Informe um valor válido') : inputIsValid(inputTxt);
+
+            function inputIsValid(inputTxt){
+                if (objetos.indexOf(inputTxt) === -1){
+                    objetos.push(inputTxt);
+                    console.log(objetos)
+                    document.getElementById('inputTxt').value = '';
+                } else {
+                    alert('Objeto já adicionado.')
+                }
+            }
+        }
+
+        function ordenarInputs(){
+       
+            console.log(objetos.sort())
+        }
+    
+    </script>
+
+</body>
+</html>
