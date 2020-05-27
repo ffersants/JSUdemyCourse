@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        div{
+            position: relative;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(180deg, rgba(86, 12, 139, 0) -10%, #74DEED 100%);
+        box-sizing: border-box;
+        }
+
+        h1{
+            position: absolute;
+            left: 200px;
+            top: 90px;
+            font-size: 4em;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        img{
+            position: absolute;
+            top: 50%;
+            left: 30%;
+        }
+
+        #img1{
+            left: 45%;
+        }
+
+        #img2{
+            left: 60%;
+        }
+
+        img:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+        <h1>Follow me at my social networks!</h1>
+
+
+            <img src="twitter-logo-1-1.png" id="img" width="120px" alt="">
+            <img src="Social-media_Instagram-512.webp" id="img1" width="120px" alt="">
+            <img src="f_logo_RGB-Hex-Blue_512.png" id="img2"  width="120px" alt="">
+    
+    </div>
+    <script>
+        document.getElementById("img1").onclick = function(){
+            window.open("https://www.instagram.com/");
+        }
+        document.getElementById("img2").onclick = function(){
+            window.open("https://www.facebook.com/");
+        }
+        document.getElementById("img").onclick = function(){
+            window.open("https://www.twitter.com/");
+        }
+    </script>
+</body>
+</html>
