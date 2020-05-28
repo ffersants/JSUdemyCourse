@@ -1,9 +1,13 @@
 
-html{
+*{
     cursor: url(../imagens/mata_mosca.png), auto;
+    margin: 0;
+    padding: 0;
 }
+
+
 
 img{
     position: absolute;
-
 }
+
