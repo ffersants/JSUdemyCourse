@@ -1,13 +1,33 @@
 
-*{
+*, div, img{
     cursor: url(../imagens/mata_mosca.png), auto;
     margin: 0;
     padding: 0;
 }
 
-
-
-img{
-    position: absolute;
+body{
+    background-image: url(../imagens/bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
+img#mosca{
+    position: absolute;
+    z-index: 100;
+}
+
+div#painel{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 15px 50px 15px 15px;
+    background-color: whitesmoke;
+    font-size: 20px;
+    z-index: 10;
+}
+
+div#painel img{
+    width: 30px;
+}

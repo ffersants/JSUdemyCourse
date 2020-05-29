@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
+
 body{
     background-image: url(../imagens/bg.jpg);
     background-repeat: no-repeat;

@@ -23,9 +23,12 @@ document.onresize = function(){
 mosca.onclick = function(){
     main()
 }
+//mosca position
 
+//timer section
+var timer = document.getElementById("timer").textContent;
+i = 0
 
-
-
-
-
+setInterval(() => {
+    
+}, interval);
