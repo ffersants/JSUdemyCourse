@@ -35,6 +35,12 @@ body{
     background-color: #6e9887;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
+    transition: all 0.8s;
+}
+
+#showBirthday:hover{
+    transform: translateY(-10px);
+
 }
 
 #showBirthday .text{
