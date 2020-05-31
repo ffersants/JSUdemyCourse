@@ -30,7 +30,7 @@ mosca.onclick = function(){
 
 //timer section
 
-segundos = 10
+segundos = 100
  function cronometro(){
     setInterval(() => {
         if (segundos < 0){
