@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onclick Events</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        div{
+            border: 2px red solid;
+            width: 250px;
+            height: 80px;
+            margin: 20px;
+            align-self: center;
+            font-size: 32px;
+            display: flex;
+            justify-content: center;
+        }
+
+        p{
+            align-self: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+        }
+
+        div:hover{
+            cursor: pointer;
+        }
+
+        .green{
+            background-color: greenyellow;
+        }
+
+        .red{
+            background-color: red;
+        }
+
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div onclick="changeToGreen()" class="green">
+        <p>CLICK</p>
+    </div>
+    
+    <div onclick="changeToRed()" class="red">
+        <p>TO</p>
+    </div>
+    
+    <div onclick="changeToBlue()" class="blue">
+        <p>CHANGE</p>
+    </div>
+        
+    <div class="null" id="toBeChanged" 
+    ondblclick="document.getElementById('toBeChanged').style.fontSize='32px'" onclick="document.getElementById('toBeChanged').style.fontSize='80px'">
+        <p>THIS</p>
+    </div>
+
+    <script>
+        function changeToBlue(){
+            toBeChanged = document.getElementById("toBeChanged");
+            toBeChanged.className = "blue"
+        }
+
+        function changeToGreen(){
+            toBeChanged = document.getElementById("toBeChanged");
+            toBeChanged.className = "green"
+        }
+
+        function changeToRed(){
+            toBeChanged = document.getElementById("toBeChanged");
+            toBeChanged.className = "red"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: inline;
+            border: 2px red solid;
+            width: 400px;
+            margin: 20px;
+            float: left;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <p>Texto geral</p>
+        <input placeholder="Digite aqui" type="text" name="" id="geral" autocomplete="off" onkeyup="digiteiAlgo()">
+    </div>
+    <div>
+        <p>Apenas letras</p>
+        <input type="text" name="" id="texto" disabled autocomplete="off">
+    </div>
+    <div>
+        <p>Apenas números</p>
+        <input type="text" name="" id="numero" disabled autocomplete="off">
+    </div>
+    
+    <script>
+        function digiteiAlgo(){
+
+            getGeral = document.getElementById("geral").value;
+            document.getElementById("geral").value = '';
+            switch(getGeral){
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    numero = document.getElementById("numero");
+                    numero.value = getGeral;
+                break;  
+
+                default :
+                    texto = document.getElementById("texto")
+                    texto.value = getGeral; 
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

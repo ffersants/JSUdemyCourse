@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+body{
+    background-image: url(../imagens/bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+article{
+    text-align: center;
+}
+
+img{
+    display: block;
+}
+
+select{
+    padding: 10px 120px 10px 5px;
+    border-radius: 0.5em;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+    border: 1px white solid;
+    transition: all 0.8s;
+}
+
+select:hover{
+    box-shadow: 0 0 1em rgb(80, 80, 255);
+    outline: none;
+    transition: all 0.8s;
+    cursor: pointer;
+    border: 1px solid rgb(80,80, 255);
+}
+
+select:focus{
+    outline-style: none;
+}
+
+option:hover{
+    cursor: pointer;
+}
+
+button{
+    display: block;
+    margin: 0 auto;
+    background-color: rgb(255, 31, 31);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 0.8em;
+    cursor: pointer;
+    border: none;
+    font-size: 1.3em;
+    letter-spacing: 0.1em;
+    transition: 0.6s;
+    box-sizing: border-box;
+}
+
+button:active{
+    box-shadow: 2px 2px rgb(255, 255, 255);
+    background-color: rgb(160, 0, 0);
+    transition: -0.5s;
+}
+
+
+button:hover{
+    box-shadow: 0 0 1em red;
+}
+
+button:focus{
+    outline-style: none;
+    border-color: none;
+    
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+/* @media (min-width: 576px) and (max-width: 767.98px) {
+    img{
+        width: 50vh;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -80%);
+    }
+} */
+
+/*Medium devices (tablets, 768px and up)*/
+/* @media (max-width: 991.98px) {
+    
+    img{
+        width: 55vh;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -80%);
+    }
+
+
+} */
