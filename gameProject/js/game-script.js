@@ -15,21 +15,12 @@ function main(){
         mosca.className = 'name' + Math.floor(Math.random()*2);
 }
 
-
-   
-
-// document.onresize = function(){
-//     cronometro();
-// }
-
 mosca.onclick = function(){
     main()
 }
-//mosca position
 
-//timer section
 
-segundos = 20;
+segundos = 30;
 contador = segundos;
 
 function cronometro(){
@@ -43,12 +34,12 @@ function cronometro(){
             tempo = document.getElementById("timer");
             tempo.innerHTML = `Tempo restante ${segundos}`
             segundos--
-            
-            if (contador - segundos === 3){
-                contador = segundos;
-                main()
-            }
-            
+                
+                if (contador - segundos === 3){
+                    contador = segundos;
+                   document.getElementById("life-img-1").src = "../imagens/coracao_vazio.png";
+                    main()
+                }
         }
     } , 1000);
 }
