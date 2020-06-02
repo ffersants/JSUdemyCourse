@@ -1,6 +1,6 @@
 
 *, div, img{
-    cursor: url(../imagens/mata_mosca.png), auto;
+    /* cursor: url(../imagens/mata_mosca.png), auto; */
     margin: 0;
     padding: 0;
 }
@@ -37,14 +37,14 @@ div#painel img{
 }
 
 .name0{
-    width: 80px;
-}
-
-.name1{
     width: 50px;
 }
 
-.name2{
+.name1{
     width: 120px;
+}
+
+.name2{
+    width: 160px;
 }
 

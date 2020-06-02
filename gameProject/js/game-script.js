@@ -1,4 +1,5 @@
-
+var clickCheck = false;
+var life = 3
 //gets random x & y point to show the mosca
     mosca = document.getElementById("mosca");
 
@@ -15,9 +16,6 @@ function main(){
         mosca.className = 'name' + Math.floor(Math.random()*2);
 }
 
-mosca.onclick = function(){
-    main()
-}
 
 
 segundos = 30;
@@ -30,15 +28,23 @@ function cronometro(){
             clearInterval(cronometro);
         } 
         
-        else{         
+        else{
+            //simplesmente atualiza o cronometro         
             tempo = document.getElementById("timer");
             tempo.innerHTML = `Tempo restante ${segundos}`
             segundos--
-                
-                if (contador - segundos === 3){
+            //simplesmente atualiza o cronometro
+           
+            mosca.onclick = function (){
+                main() 
+                contador = segundos;
+            }
+            
+           if (contador - segundos === 3){
                     contador = segundos;
-                   document.getElementById("life-img-1").src = "../imagens/coracao_vazio.png";
                     main()
+                    document.getElementById("life-img-" + life).src = "../imagens/coracao_vazio.png"
+                    life--
                 }
         }
     } , 1000);
