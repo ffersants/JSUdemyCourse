@@ -28,13 +28,52 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
+        button{
+            display: block;
+            margin: 0 auto;
+            background-color: rgb(255, 31, 31);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 0.8em;
+            cursor: pointer;
+            border: none;
+            font-size: 1.3em;
+            letter-spacing: 0.1em;
+            transition: 0.6s;
+            box-sizing: border-box;
+        }
+
+        button:active{
+            box-shadow: 2px 2px rgb(255, 255, 255);
+            background-color: rgb(160, 0, 0);
+            transition: -0.5s;
+        }
+
+
+        button:hover{
+            box-shadow: 0 0 1em red;
+        }
+
+        button:focus{
+            outline-style: none;
+            border-color: none;
+            
+        }
     </style>
 </head>
 <body>
     
     <div id="message">
         <img src="../imagens/vitoria.png" width="100%" alt="">
+
+        <button onclick="playAgain()" type="submit" id="start">Jogar novamente</button>
     </div>
 
+    <script>
+        function playAgain(){
+            location.assign("file:///C:/Users/DheyEs/Documents/udemy/Javascript/Udemy%20Course/gameProject/html/index.html")
+        }
+    </script>
 </body>
 </html>
