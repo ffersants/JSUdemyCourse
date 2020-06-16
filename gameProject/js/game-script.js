@@ -1,9 +1,21 @@
 mosca = document.getElementById("mosca");
 
-var clickCheck = false;
+levelParameter = window.location.href
+switch(levelParameter) {
+    case "file:///C:/Users/DheyEs/Documents/udemy/Javascript/Udemy%20Course/gameProject/html/playing.html?level=easy" :
+       var level = 5
+    break;
+
+    case "file:///C:/Users/DheyEs/Documents/udemy/Javascript/Udemy%20Course/gameProject/html/playing.html?level=medium":
+        var level = 3
+    break;
+
+    case "file:///C:/Users/DheyEs/Documents/udemy/Javascript/Udemy%20Course/gameProject/html/playing.html?level=hard" :
+       var level = 2
+    break;
+}
+
 var life = 3
-
-
 var segundos = 30;
 var contador = segundos;
 //gets random x & y point to show the mosca
@@ -23,16 +35,13 @@ function main(){
         mosca.style.right = randomWidth + "px";
         mosca.style.bottom = randomHeight + "px";
 
-        mosca.className = 'name' + Math.floor(Math.random()*2);
+        mosca.className = 'name' + Math.floor(Math.random()*3);
 }
 
-
-
 function cronometro(){
-    
     setInterval(() => {
         if (segundos < 0 && life != 0){
-            window.location.assign("http://127.0.0.1:5500/html/uWon.html")
+            window.location.assign("../html/uWon.html")
         } 
         
         else{
@@ -42,14 +51,14 @@ function cronometro(){
             segundos--
             //simplesmente atualiza o cronometro
                        
-           if (contador - segundos === 3 && life != 0){
+           if (contador - segundos === level && life != 0){
                     contador = segundos;
                     main()
                     document.getElementById("life-img-" + life).src = "../imagens/coracao_vazio.png"
                     life--
                 }      
             if (life === 0){
-                window.location.assign("http://127.0.0.1:5500/html/uLost.html")
+                window.location.assign("../html/uLost.html")
             }
         }
     } , 1000);

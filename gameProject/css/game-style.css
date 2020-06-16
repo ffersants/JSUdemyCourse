@@ -41,10 +41,15 @@ div#painel img{
 }
 
 .name1{
-    width: 120px;
+    width: 80px;
+    transform: scaleX(-1);
 }
 
 .name2{
-    width: 160px;
+    width: 120px;
 }
 
+.name3{
+    width: 180px;
+    transform: scaleX(-1);
+}
