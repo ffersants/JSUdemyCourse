@@ -37,3 +37,43 @@ maAccount.depositar(40); console.log(maAccount);
 maAccount.sacar(20); console.log(maAccount);
 
 console.log(maAccount.consultarSaldo())
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+allSofas = new Array()
+
+class SofaNovo {
+    constructor(cor, lugares, reclinavel){
+        this.cor = cor;
+        this.lugares = lugares;
+        this.reclinavel = reclinavel;
+
+        allSofas.push(cor, lugares, reclinavel)
+    }
+}
+
+sofa1 = new SofaNovo('vermelho', 5, false)
+sofa2 = new SofaNovo('preto', 3, true)
+
+console.log(allSofas)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+let todasAsCadeira = []
+
+class cadeira {
+  constructor(cor, numDePernas, gira, id){
+    this.cor = `Cor da cadeira: ${cor}`;
+    this.numDePernas =`Número de pernas: ${numDePernas}`;
+    this.gira = gira;
+    this.id = id = Math.floor((Math.random()*10) + 1)
+    todasAsCadeira.push(cor, numDePernas, gira, id)
+  }
+}
+
+cadeiraPro = new cadeira('red', 3, false)
+cadeiraGmer = new cadeira('black & white', 1, true)
+console.log(cadeiraPro)
+console.log(cadeiraGmer);
+
+console.log(todasAsCadeira)
+
