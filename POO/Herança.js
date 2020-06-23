@@ -78,6 +78,19 @@ class Papagaio extends Passaro{
     
 }
 
+class Ema extends Passaro{
+    constructor(){
+        super('medio')
+    }
+    voar(){
+        console.log('vishhh voa não!')//sobreescrever comportamentos herdados do objeto pai de acordo com a necessidade, este é o polimorfismo
+    }
+}
+
+ana = new Ema(); console.log(ana)
+
+ana.voar()
+
 gilberto = new Papagaio(); console.log(gilberto)
 //Atributos cor e tamanho herdados da classe Passaro, que por sua ver herda da classe Animal
 //Atributo tamanhoDoBico herdado da classe Passaro
