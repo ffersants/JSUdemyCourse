@@ -28,28 +28,34 @@ document.addEventListener("keydown", () => {
                 
             }
         }
-    }//end class
+    }//end class Despesa
 
    
-function gravar(d){
-    //Quando passado um nome de chave e valor, irá adicionar essa chave para o armazenamento,
-    //ou atualizar o valor dessa chave, se já existir.
-    //neste caso um valor está sobrepondo o outro por conta da chave ser a mesma
-    //localStorage.setItem('despesa', JSON.stringify(d))//.setItem('chave', valor)
-    let id = '';
-    for ( i=0; i<9; i++ ){
-        letters ='abcdefghijklmnopqrstuvwxyz'; 
-        num = Math.floor(Math.random() * 9) + 1;
-        id += num;
-        id += letters[num];
-    } 
-    
-                        //from Object to JSON
-    localStorage.setItem(id, JSON.stringify(d))
-                        //JSON.parse() 
-                        //from JSON to Object
+    class Bd {
+        constructor(){
+           let id = localStorage.getItem('id');
 
-}
+           if (id === null){
+               localStorage.setItem('id', 0)
+           }
+        }    
+        
+        getProximoId(){
+            let proximoId = localStorage.getItem('id');//no primeiro registro retorna null
+            return parseInt(proximoId) + 1;
+        }
+
+        gravar(d){
+            let id = this.getProximoId()
+            localStorage.setItem('id', id)
+            localStorage.setItem(id, JSON.stringify(d))
+        }
+    }//ends class BD
+    let bd = new Bd()
+ 
+    
+   
+
 
 
 function cadastrarDespesa() {
@@ -57,7 +63,7 @@ function cadastrarDespesa() {
     var texto = document.getElementById("modal_conteudo");
     var butaum = document.getElementById("modal_btn");
     var seila1 = document.getElementById("modal_titulo_div");
-
+    
     ano = document.getElementById("ano");
     mes = document.getElementById("mes");
     dia = document.getElementById("dia");
@@ -77,7 +83,7 @@ function cadastrarDespesa() {
 
     if(despesa.validarDados()){
         
-        gravar(despesa)
+        bd.gravar(despesa)//assim já se tem logo de ínicio um registro com id 0
         titulo.textContent = "Registro inserido com sucesso";
         texto.textContent = "Despesa cadastrada!";
     

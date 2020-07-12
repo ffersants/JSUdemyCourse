@@ -1,1 +1,0 @@
-inputs = document.querySelectorAll("input")
