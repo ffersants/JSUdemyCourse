@@ -22,11 +22,11 @@ document.addEventListener("keydown", () => {
                     this[atributo] === '' ||
                     this[atributo] === null) {
                         return false;
-                    } else{
-                        return true
-                    }
-                
+                    } 
+               
             }
+           return true;
+           
         }
     }//end class Despesa
 
@@ -50,13 +50,32 @@ document.addEventListener("keydown", () => {
             localStorage.setItem('id', id)
             localStorage.setItem(id, JSON.stringify(d))
         }
+
+        recuperarTodosRegistros(){
+           let despesas = Array()
+        
+            //recupera todas as despesas em localstorage
+            let todosRegistros = localStorage.getItem('id')
+            
+            for(let id = 1; id <= todosRegistros; id++){
+               let registro = JSON.parse(localStorage.getItem(id))
+                
+                if(registro === null){
+                //continue, pula pra próxima iteração sem realizar o push
+                //do registro de testou verdadeir para null
+                    continue
+                }
+                
+            despesas.push(registro);
+
+            return despesas
+            }
+        
+        }
+
     }//ends class BD
     let bd = new Bd()
  
-    
-   
-
-
 
 function cadastrarDespesa() {
     var titulo = document.getElementById("erroGravacaoModalLabel");
@@ -81,7 +100,7 @@ function cadastrarDespesa() {
     )
 
 
-    if(despesa.validarDados()){
+    if(despesa.validarDados() === true){
         
         bd.gravar(despesa)//assim já se tem logo de ínicio um registro com id 0
         titulo.textContent = "Registro inserido com sucesso";
@@ -109,6 +128,9 @@ function cadastrarDespesa() {
     }
 }
 
-
-
-
+function carregaListaDespesas(){
+    despesas = Array();
+    
+    despesas = bd.recuperarTodosRegistros();
+    console.log(despesas);
+}
