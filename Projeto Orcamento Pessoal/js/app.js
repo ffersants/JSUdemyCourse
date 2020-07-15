@@ -12,8 +12,9 @@ document.addEventListener("keydown", () => {
             this.tipo = tipo;
             this.descricao = descricao
             this.valor = valor;
+            
         }
-        
+
         validarDados() {
             //loop in all instances of the object
             for (let atributo in this){
@@ -60,19 +61,19 @@ document.addEventListener("keydown", () => {
             for(let id = 1; id <= todosRegistros; id++){
                let registro = JSON.parse(localStorage.getItem(id))
                 
+               //se um registro tiver sido apagado e estiver um salto nos ids?
+               //tipo 3, 4, 6, 7, onde o registro 5 foi excluído? 
                 if(registro === null){
                 //continue, pula pra próxima iteração sem realizar o push
-                //do registro de testou verdadeir para null
+                //do registro que testou verdadeiro para null
                     continue
                 }
                 
             despesas.push(registro);
-
+            }      
+            
             return despesas
-            }
-        
         }
-
     }//ends class BD
     let bd = new Bd()
  
@@ -87,6 +88,8 @@ function cadastrarDespesa() {
     mes = document.getElementById("mes");
     dia = document.getElementById("dia");
     tipo = document.getElementById("tipo");
+    tipoInText = tipo.options[tipo.selectedIndex].text;
+
     descricao = document.getElementById("descricao");
     valor = document.getElementById("valor");
 
@@ -94,10 +97,11 @@ function cadastrarDespesa() {
         ano.value,
         dia.value,
         mes.value,
-        tipo.value,
+        tipoInText,
         descricao.value,
         valor.value
     )
+
 
 
     if(despesa.validarDados() === true){
@@ -129,8 +133,25 @@ function cadastrarDespesa() {
 }
 
 function carregaListaDespesas(){
-    despesas = Array();
+   let despesas = Array();
+   despesas = bd.recuperarTodosRegistros();
+    //seleciona tbody
+    listaDespesas = document.getElementById("lista-despesas");
+    console.log(despesas)
+    despesas.forEach( function(d){
+        //cria linha <tr>
+        linha = listaDespesas.insertRow();
+        
+        d.dia < 10 ? d.dia = '0' + d.dia : false;
+        d.mes < 10 ? d.mes = '0' + d.mes : false;
+
+        data = `${d.dia}/${d.mes}/${d.ano}`
+        console.log(data)
+        //cria coluna <td>
+        linha.insertCell(0).textContent = data;
+        linha.insertCell(1).textContent = d.tipo;
+        linha.insertCell(2).textContent = d.descricao;
+        linha.insertCell(3).textContent = d.valor;
+    })
     
-    despesas = bd.recuperarTodosRegistros();
-    console.log(despesas);
 }
