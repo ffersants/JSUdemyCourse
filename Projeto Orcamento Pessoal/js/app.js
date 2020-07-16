@@ -131,7 +131,18 @@ function cadastrarDespesa() {
        
         seila1.className = "modal-header text-danger";
 
-        $("#sucessoGravacao").modal("show");    
+        $("#sucessoGravacao").modal("show"); 
+        
+        modalBtn = document.getElementById("modal_btn")
+        modalBtn.addEventListener("click", () => {
+            ano.value = "";
+            dia.value = "";
+            mes.value = "";
+            descricao.value = "";
+            valor.value = "";
+            tipo.value = "";    
+        })
+
     }
 }
 
