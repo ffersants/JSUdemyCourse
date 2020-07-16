@@ -3,6 +3,9 @@ document.addEventListener("keydown", () => {
     event.key === "Enter" ? cadastrarDespesa() : false;
 })
 
+// search = document.getElementById("search");
+// search.addEventListener("click", pesquisar())
+
 
     class Despesa{
         constructor(ano, mes, dia, tipo, descricao, valor){
@@ -12,7 +15,7 @@ document.addEventListener("keydown", () => {
             this.tipo = tipo;
             this.descricao = descricao
             this.valor = valor;
-            
+            this.data = `${this.dia}/${this.mes}/${this.ano}`
         }
 
         validarDados() {
@@ -137,7 +140,7 @@ function carregaListaDespesas(){
    despesas = bd.recuperarTodosRegistros();
     //seleciona tbody
     listaDespesas = document.getElementById("lista-despesas");
-    console.log(despesas)
+    
     despesas.forEach( function(d){
         //cria linha <tr>
         linha = listaDespesas.insertRow();
@@ -145,13 +148,70 @@ function carregaListaDespesas(){
         d.dia < 10 ? d.dia = '0' + d.dia : false;
         d.mes < 10 ? d.mes = '0' + d.mes : false;
 
-        data = `${d.dia}/${d.mes}/${d.ano}`
-        console.log(data)
+        showData = `${d.dia}/${d.mes}/${d.ano}`
         //cria coluna <td>
-        linha.insertCell(0).textContent = data;
+        linha.insertCell(0).textContent = showData;
         linha.insertCell(1).textContent = d.tipo;
         linha.insertCell(2).textContent = d.descricao;
         linha.insertCell(3).textContent = d.valor;
     })
+}
+
+
+
+function pesquisar () {
+    //DELETA REGISTROS ANTES CARREGADOS
+    //<tbody id="lista-despesas">
+    var listaDespesas = document.getElementById("lista-despesas");
+  
+    //pega o número total de linhas no corpo da tabela
+    //CADA LINHA É UM REGISTRO
+    todasTR = listaDespesas.childNodes;
+    todasTRLength = todasTR.length
+    //console.log(todasTR.length)
+
+    // while( todasTR.length != 0 ){
+    //     todasTR[0].localName === 'tr' ? listaDespesas.deleteRow(0) : false;
+    // }
+
+    for ( contador = todasTRLength - 1; contador != 0; contador--){
+            listaDespesas.deleteRow(todasTR)
+        }
+
+        var listaDespesas = document.getElementById("lista-despesas");
+
+        let tipo = document.getElementById("tipo"); 
+        
+        let tipoInText = tipo.options[tipo.selectedIndex].text;
+        console.log(tipoInText)
+        let todosRegistros = localStorage.getItem('id');
+        
+        
+        for( let item = 1; item <= todosRegistros; item++){
+            //console.log(localStorage.getItem(item));
+            let registro = JSON.parse(localStorage.getItem(item));
+            console.log(registro)
+            if (registro.tipo === tipoInText){
+    
+                newLine = listaDespesas.insertRow();
+                
+                registro.dia < 10 ? registro.dia = '0' + registro.dia : false;
+                registro.mes < 10 ? registro.mes = '0' + registro.mes : false;
+    
+                data = `${registro.dia}/${registro.mes}/${registro.ano}`
+    
+                
+                newLine.insertCell(0).textContent = data;
+                newLine.insertCell(1).textContent = registro.tipo;
+                newLine.insertCell(2).textContent = registro.descricao;
+                newLine.insertCell(3).textContent = registro.valor;
+            }
+        }
+}
+    
+  
+
+
+function pesquisar2() {
     
 }
