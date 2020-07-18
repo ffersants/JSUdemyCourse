@@ -180,15 +180,12 @@ function pesquisar () {
     todasTRLength = todasTR.length
 
     for ( contador = todasTRLength - 1; contador != 0; contador--){
-            listaDespesas.deleteRow(todasTR)
+            listaDespesas.deleteRow(todasTR)//deleta node por node abaixo de lista-despesas
             console.log(todasTR.length)
-        }
+    }
 
-        var listaDespesas = document.getElementById("lista-despesas");
 
         let tipoInText = tipo.options[tipo.selectedIndex].text;
-        
-        console.log(tipoInText)
         let todosRegistros = localStorage.getItem('id');
         
         
