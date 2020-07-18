@@ -82,12 +82,12 @@
         </div>
         
         <div class="col-md-2">
-          <input type="number" class="form-control" placeholder="Dia" id="dia" />
+          <input type="number" min="1" max="31" class="form-control" placeholder="Dia" id="dia" />
         </div>
 
         <div class="col-md-6">
           <select class="form-control" id="tipo">
-            <option>Tipo</option>
+            <option value="">Tipo</option>
             <option value="1">Alimentação</option>
             <option value="2">Educação</option>
             <option value="3">Lazer</option>
@@ -128,7 +128,7 @@
             Despesa cadastrada!
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-success" data-dismiss="modal" onclick="" id="modal_btn">Ok</button>
+            <button type="button" class="btn btn-success" data-dismiss="modal" id="modal_btn">Ok</button>
           </div>
         </div>
       </div>

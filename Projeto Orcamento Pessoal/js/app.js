@@ -87,11 +87,11 @@ function cadastrarDespesa() {
     var butaum = document.getElementById("modal_btn");
     var seila1 = document.getElementById("modal_titulo_div");
     
-    ano = document.getElementById("ano");
-    mes = document.getElementById("mes");
-    dia = document.getElementById("dia");
-    tipo = document.getElementById("tipo");
-    tipoInText = tipo.options[tipo.selectedIndex].text;
+    var ano = document.getElementById("ano");
+    var mes = document.getElementById("mes");
+    var dia = document.getElementById("dia");
+    var tipo = document.getElementById("tipo");
+    var tipoInText = tipo.options[tipo.selectedIndex].text;
 
     descricao = document.getElementById("descricao");
     valor = document.getElementById("valor");
@@ -118,6 +118,16 @@ function cadastrarDespesa() {
     
         seila1.className = "modal-header text-success";
         $("#sucessoGravacao").modal("show");
+
+        modalBtn = document.getElementById("modal_btn")
+        modalBtn.addEventListener("click", () => {
+            ano.value = "";
+            dia.value = "";
+            mes.value = "";
+            descricao.value = "";
+            valor.value = "";
+            tipo.value = "";    
+        })
     } 
     
     else{
@@ -132,17 +142,6 @@ function cadastrarDespesa() {
         seila1.className = "modal-header text-danger";
 
         $("#sucessoGravacao").modal("show"); 
-        
-        modalBtn = document.getElementById("modal_btn")
-        modalBtn.addEventListener("click", () => {
-            ano.value = "";
-            dia.value = "";
-            mes.value = "";
-            descricao.value = "";
-            valor.value = "";
-            tipo.value = "";    
-        })
-
     }
 }
 
@@ -179,21 +178,16 @@ function pesquisar () {
     //CADA LINHA É UM REGISTRO
     todasTR = listaDespesas.childNodes;
     todasTRLength = todasTR.length
-    //console.log(todasTR.length)
-
-    // while( todasTR.length != 0 ){
-    //     todasTR[0].localName === 'tr' ? listaDespesas.deleteRow(0) : false;
-    // }
 
     for ( contador = todasTRLength - 1; contador != 0; contador--){
             listaDespesas.deleteRow(todasTR)
+            console.log(todasTR.length)
         }
 
         var listaDespesas = document.getElementById("lista-despesas");
 
-        let tipo = document.getElementById("tipo"); 
-        
         let tipoInText = tipo.options[tipo.selectedIndex].text;
+        
         console.log(tipoInText)
         let todosRegistros = localStorage.getItem('id');
         
@@ -222,7 +216,3 @@ function pesquisar () {
     
   
 
-
-function pesquisar2() {
-    
-}
