@@ -51,6 +51,7 @@ document.addEventListener("keydown", () => {
 
         gravar(d){
             let id = this.getProximoId()
+            d.id = id;
             localStorage.setItem('id', id)
             localStorage.setItem(id, JSON.stringify(d))
         }
@@ -122,6 +123,11 @@ document.addEventListener("keydown", () => {
 
         }
         
+        apagar(id) {
+            let a = id.slice(-1);
+            localStorage.removeItem(a)
+        }
+
     }//ends class BD
     let bd = new Bd()
  
@@ -198,8 +204,9 @@ function carregaListaDespesas(){
     
     despesas.forEach( function(d){
         //cria linha <tr>
+  
         linha = listaDespesas.insertRow();
-        
+       
         d.dia < 10 ? d.dia = '0' + d.dia : false;
         d.mes < 10 ? d.mes = '0' + d.mes : false;
 
@@ -209,6 +216,8 @@ function carregaListaDespesas(){
         linha.insertCell(1).textContent = d.tipo;
         linha.insertCell(2).textContent = d.descricao;
         linha.insertCell(3).textContent = d.valor;
+        linha.insertCell(4).innerHTML = `<button id="apagar" onclick="apagar()" class="btn btn-sm btn-danger">X</button>`;
+        document.getElementById("apagar").id += d.id;
     })
 }
 
@@ -268,6 +277,14 @@ uma unidade acima que corresponde ao index de "text"
         }    
     )
     
+}
+
+function apagar () {
+    let elemento = event.target;
+    bd.apagar(elemento.id)
+    apagarLinha = elemento.parentNode.parentNode
+    apagarLinha.innerHTML = "";
+
 }
 
 // function pesquisar () {
