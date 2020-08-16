@@ -1,7 +1,6 @@
 mosca = document.getElementById("mosca");
 
 levelParameter = window.location.href;
-console.log(levelParameter.indexOf("="));
 
 levelParameter = levelParameter.slice(levelParameter.indexOf("=") + 1, levelParameter.length)
 console.log(levelParameter);
