@@ -1,16 +1,21 @@
 mosca = document.getElementById("mosca");
 
-levelParameter = window.location.href
+levelParameter = window.location.href;
+console.log(levelParameter.indexOf("="));
+
+levelParameter = levelParameter.slice(levelParameter.indexOf("=") + 1, levelParameter.length)
+console.log(levelParameter);
+
 switch(levelParameter) {
-    case "file:///C:/Users/DheyEs/Documents/udemy/Javascript/Udemy%20Course/gameProject/html/playing.html?level=easy" :
+    case "easy" :
        var level = 5
     break;
 
-    case "file:///C:/Users/DheyEs/Documents/udemy/Javascript/Udemy%20Course/gameProject/html/playing.html?level=medium":
+    case "medium":
         var level = 3
     break;
 
-    case "file:///C:/Users/DheyEs/Documents/udemy/Javascript/Udemy%20Course/gameProject/html/playing.html?level=hard" :
+    case "hard" :
        var level = 2
     break;
 }

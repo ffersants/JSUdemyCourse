@@ -9,6 +9,6 @@ start.onclick = () => {
     
     level === "Médio" ? level = 'medium' : level === "Fácil" ? level = 'easy' : level === "Difícil" ? level = "hard" : false 
 
-    window.location.assign(`C:/Users/DheyEs/Documents/udemy/Javascript/Udemy Course/gameProject/html/playing.html?level=${level}`)
+    window.location.assign(`./playing.html?level=${level}`)
 }
 
